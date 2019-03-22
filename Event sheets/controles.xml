@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>controles</name>
+    <events>
+        <event-block any="1" sid="481955393225877">
+            <conditions>
+                <condition id="2" name="Key is down" sid="109943758854932" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="148804126865332" type="hero">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="260956607358406" type="Sprite5">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Value">&quot;gauche&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="818412190295256">
+            <conditions>
+                <condition id="2" name="Key is down" sid="767525963789219" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="656263590671483" type="hero">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="495589640682865" type="Sprite5">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Value">&quot;droite&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="744204352168960">
+            <conditions>
+                <condition id="2" name="Key is down" sid="376683911809317" type="Keyboard">
+                    <param id="0" name="Key">38</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="493749320841875" type="hero">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action id="-10" name="Set value" sid="657605775802244" type="Sprite5">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Value">&quot;haut&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="396231225986689">
+            <conditions>
+                <condition id="2" name="Key is down" sid="562193137663170" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="260477508671792" type="hero">
+                    <param id="0" name="Control">3</param>
+                </action>
+                <action id="-10" name="Set value" sid="231193984540397" type="Sprite5">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Value">&quot;bas&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="441701005573586">
+            <conditions>
+                <condition id="5" name="Compare axis" sid="165691268077324" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Axis">0</param>
+                    <param id="2" name="Comparison">2</param>
+                    <param id="3" name="Value">-40</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="136980673936617" type="hero">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="176172000407167" type="Sprite5">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Value">&quot;gauche&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="753663754323286">
+            <conditions>
+                <condition id="5" name="Compare axis" sid="588266397413829" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Axis">0</param>
+                    <param id="2" name="Comparison">4</param>
+                    <param id="3" name="Value">40</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="378237101591982" type="hero">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="528203009778199" type="Sprite5">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Value">&quot;droite&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="667351270462981">
+            <conditions>
+                <condition id="5" name="Compare axis" sid="419989538674007" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Axis">1</param>
+                    <param id="2" name="Comparison">2</param>
+                    <param id="3" name="Value">-40</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="995554179605929" type="hero">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action id="-10" name="Set value" sid="767344315883588" type="Sprite5">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Value">&quot;haut&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="778046828895834">
+            <conditions>
+                <condition id="5" name="Compare axis" sid="661676290289437" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Axis">1</param>
+                    <param id="2" name="Comparison">4</param>
+                    <param id="3" name="Value">40</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="444301506596571" type="hero">
+                    <param id="0" name="Control">3</param>
+                </action>
+                <action id="-10" name="Set value" sid="334867546434836" type="Sprite5">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Value">&quot;bas&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
