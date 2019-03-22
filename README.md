@@ -1,2 +1,2 @@
 ﻿# kidinthehouse
-Projet de jeu collectif.
+Projet de jeu collectif par Xor, Kayupla, Squale...
