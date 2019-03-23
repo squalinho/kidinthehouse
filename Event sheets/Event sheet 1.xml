@@ -3,8 +3,52 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <include>dialogues_ES</include>
         <include>controles</include>
         <variable constant="0" name="cam" sid="663636989624691" static="0" type="number">0</variable>
+        <event-group description="" sid="341539819042461" title="init">
+            <sub-events>
+                <event-block sid="291866053540580">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="125220722323671" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="207377110433672" type="hero">
+                            <param id="0" name="Object">Sprite5</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="689508734367625" type="Sprite5">
+                            <param id="0" name="Pin to">hero</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="371121304037303" type="tourelle">
+                            <param id="0" name="Duration">4</param>
+                            <param id="1" name="Type">1</param>
+                            <param id="2" name="Tag">&quot;shoot&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="162906082804459">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="848967300830285" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Sort all Objects in layer by Y" sid="256179603591751" type="ZSorter">
+                            <param id="0" name="Layer">&quot;jeu&quot;</param>
+                        </action>
+                        <action id="-29" name="Move to object" sid="765617769393006" type="Sprite5">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Object">hero</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="671748347397235" type="Sprite5">
+                            <param id="0" name="Animation">Self.direction</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="676671231181308" title="debug">
             <sub-events>
                 <event-block sid="330808560062839">
@@ -12,140 +56,111 @@
                         <condition id="-1" name="Every tick" sid="803442301252021" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="862479308216201" type="Text">
-                            <param id="0" name="Text">Sprite5.direction</param>
+                        <action id="0" name="Set text" sid="862479308216201" type="debugTxt">
+                            <param id="0" name="Text">Sprite5.direction &amp; newline &amp; Gamepad.Axis(0,0) &amp; newline &amp; Gamepad.Axis(0,1)</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="664745736003880">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="450904127802512" type="System">
-                    <param id="0" name="Variable">cam</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-7" name="Scroll to position" sid="467067272801810" type="System">
-                    <param id="0" name="X">hero.X</param>
-                    <param id="1" name="Y">hero.Y</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="162906082804459">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="848967300830285" type="System" />
-            </conditions>
-            <actions>
-                <action id="0" name="Sort all Objects in layer by Y" sid="256179603591751" type="ZSorter">
-                    <param id="0" name="Layer">0</param>
-                </action>
-                <action id="-29" name="Move to object" sid="765617769393006" type="Sprite5">
-                    <param id="0" name="Where">0</param>
-                    <param id="1" name="Object">hero</param>
-                </action>
-                <action id="4" name="Set animation" sid="671748347397235" type="Sprite5">
-                    <param id="0" name="Animation">Self.direction</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="423588728328558">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="585144409208207" type="Sprite5">
-                    <param id="0" name="Object">Sprite2</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="933201488714097" type="Sprite2" />
-            </actions>
-        </event-block>
-        <event-block sid="425743626536009">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="887077538402713" type="System" />
-            </conditions>
-            <actions>
-                <action behavior="Timer" id="0" name="Start timer" sid="371121304037303" type="Sprite3">
-                    <param id="0" name="Duration">4</param>
-                    <param id="1" name="Type">1</param>
-                    <param id="2" name="Tag">&quot;shoot&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="489771671219701">
-            <conditions>
-                <condition behavior="Timer" id="0" name="On timer" sid="216388197148328" type="Sprite3">
-                    <param id="0" name="Tag">&quot;shoot&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Spawn another object" sid="872156393727473" type="Sprite3">
-                    <param id="0" name="Object">Sprite4</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="Image point">&quot;canon&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="210065347800645">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="502380984156933" type="Sprite4">
-                    <param id="0" name="Object">Sprite5</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="119420067104262" type="Sprite4" />
-                <action behavior="Flash" id="0" name="Flash" sid="962631414478086" type="Sprite5">
-                    <param id="0" name="&apos;On&apos; time">0.1</param>
-                    <param id="1" name="&apos;Off&apos; time">0.1</param>
-                    <param id="2" name="Duration">1.0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="291866053540580">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="125220722323671" type="System" />
-            </conditions>
-            <actions>
-                <action id="0" name="Spawn another object" sid="207377110433672" type="hero">
-                    <param id="0" name="Object">Sprite5</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-                <action behavior="Pin" id="0" name="Pin to object" sid="689508734367625" type="Sprite5">
-                    <param id="0" name="Pin to">hero</param>
-                    <param id="1" name="Mode">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="521168272443357">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="474461972954915" type="Sprite5">
-                    <param id="0" name="Instance variable">direction</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">&quot;gauche&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="557755229563998" type="Sprite5">
-                    <param id="0" name="Animation">&quot;droite&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="319309675559635" type="Sprite5">
-                    <param id="0" name="State">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="158572145591431">
-            <conditions>
-                <condition id="-22" name="Else" sid="810249750800658" type="System" />
-            </conditions>
-            <actions>
-                <action id="7" name="Set mirrored" sid="998891464217197" type="Sprite5">
-                    <param id="0" name="State">1</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group description="" sid="788628104120450" title="gestion camera">
+            <sub-events>
+                <event-block sid="664745736003880">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="450904127802512" type="System">
+                            <param id="0" name="Variable">cam</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Scroll to position" sid="467067272801810" type="System">
+                            <param id="0" name="X">hero.X</param>
+                            <param id="1" name="Y">hero.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="122496040820857" title="tourelle">
+            <sub-events>
+                <event-block sid="489771671219701">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="On timer" sid="216388197148328" type="tourelle">
+                            <param id="0" name="Tag">&quot;shoot&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="872156393727473" type="tourelle">
+                            <param id="0" name="Object">balle</param>
+                            <param id="1" name="Layer">&quot;jeu&quot;</param>
+                            <param id="2" name="Image point">&quot;canon&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="423588728328558">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="585144409208207" type="Sprite5">
+                            <param id="0" name="Object">item</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="933201488714097" type="item" />
+                    </actions>
+                </event-block>
+                <event-block sid="210065347800645">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="502380984156933" type="balle">
+                            <param id="0" name="Object">Sprite5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="119420067104262" type="balle" />
+                        <action behavior="Flash" id="0" name="Flash" sid="962631414478086" type="Sprite5">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="530018669007846" title="animations hero">
+            <sub-events>
+                <event-block sid="521168272443357">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="474461972954915" type="Sprite5">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;gauche&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="557755229563998" type="Sprite5">
+                            <param id="0" name="Animation">&quot;droite&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="319309675559635" type="Sprite5">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="158572145591431">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="810249750800658" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="688428762153012" type="Sprite5">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="998891464217197" type="Sprite5">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

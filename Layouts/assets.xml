@@ -38,6 +38,8 @@
                     </properties>
                     <instance-variables>
                         <direction></direction>
+                        <dirX>0</dirX>
+                        <dirY>0</dirY>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>dialogues_ES</name>
+    <events>
+        <variable constant="0" name="dial" sid="836156441485468" static="0" type="number">0</variable>
+        <event-group description="" sid="872455813644776" title="dialog">
+            <sub-events>
+                <event-block sid="727813045055533">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="888196011188457" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Load" sid="168710375127774" type="Array">
+                            <param id="0" name="JSON">&quot;{&#x0D;&#x0A;&#x0D;&#x0A;&quot;&quot;c2array&quot;&quot;:true,&#x0D;&#x0A;&quot;&quot;size&quot;&quot;:[3,3,1],&#x0D;&#x0A;&quot;&quot;data&quot;&quot;:[&#x0D;&#x0A;&#x0D;&#x0A;&#x09;[[&quot;&quot;idpnj&quot;&quot;],[&quot;&quot;Nom qui parle&quot;&quot;],[&quot;&quot;Dialogue&quot;&quot;]],&#x0D;&#x0A;&#x09;[[&quot;&quot;1&quot;&quot;],[&quot;&quot;Bob&quot;&quot;],[&quot;&quot;Salut comment ca va ?&quot;&quot;]],&#x0D;&#x0A;&#x09;[[&quot;&quot;2&quot;&quot;],[&quot;&quot;Max&quot;&quot;],[&quot;&quot;Bien et toi ?&quot;&quot;]]&#x0D;&#x0A;&#x09;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;]&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;}&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="394733487030381">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="935300086890905" type="Sprite5">
+                    <param id="0" name="Object">pnj</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="824118313264881" type="System">
+                    <param id="0" name="Variable">dial</param>
+                    <param id="1" name="Value">pnj.id</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="389071023842701">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="918964782172263" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="632090619534945" type="dialogueTxt">
+                    <param id="0" name="Text">Array.At(dial,1) &amp; newline &amp; Array.At(dial,2)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="641811065269966">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="370580055500723" type="System">
+                    <param id="0" name="Variable">dial</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="553489319366316" type="dialogueTxt">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action behavior="8Direction" id="8" name="Set enabled" sid="724177914623369" type="hero">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="168600819506164">
+            <conditions>
+                <condition id="-22" name="Else" sid="859753898280486" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="267071584994746" type="dialogueTxt">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action behavior="8Direction" id="8" name="Set enabled" sid="861503950968395" type="hero">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="749400050412439">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="198347375662617" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="285243538622086" type="System">
+                    <param id="0" name="Variable">dial</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
