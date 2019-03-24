@@ -10,7 +10,7 @@
                         <condition id="7" name="On any key released" sid="704984754614838" type="Keyboard" />
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="746124128121773" type="Sprite5">
+                        <action id="-10" name="Set value" sid="746124128121773" type="heroSkin">
                             <param id="0" name="Instance variable">direction</param>
                             <param id="1" name="Value">&quot;&quot;</param>
                         </action>
@@ -18,7 +18,7 @@
                 </event-block>
                 <event-block sid="162992364866806">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="144021224875107" type="Sprite5">
+                        <condition id="-7" name="Compare instance variable" sid="144021224875107" type="heroSkin">
                             <param id="0" name="Instance variable">direction</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;&quot;</param>
@@ -36,7 +36,7 @@
                                 <action behavior="8Direction" id="7" name="Simulate control" sid="148804126865332" type="hero">
                                     <param id="0" name="Control">0</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="260956607358406" type="Sprite5">
+                                <action id="-10" name="Set value" sid="260956607358406" type="heroSkin">
                                     <param id="0" name="Instance variable">direction</param>
                                     <param id="1" name="Value">&quot;gauche&quot;</param>
                                 </action>
@@ -52,7 +52,7 @@
                                 <action behavior="8Direction" id="7" name="Simulate control" sid="656263590671483" type="hero">
                                     <param id="0" name="Control">1</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="495589640682865" type="Sprite5">
+                                <action id="-10" name="Set value" sid="495589640682865" type="heroSkin">
                                     <param id="0" name="Instance variable">direction</param>
                                     <param id="1" name="Value">&quot;droite&quot;</param>
                                 </action>
@@ -68,7 +68,7 @@
                                 <action behavior="8Direction" id="7" name="Simulate control" sid="493749320841875" type="hero">
                                     <param id="0" name="Control">2</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="657605775802244" type="Sprite5">
+                                <action id="-10" name="Set value" sid="657605775802244" type="heroSkin">
                                     <param id="0" name="Instance variable">direction</param>
                                     <param id="1" name="Value">&quot;haut&quot;</param>
                                 </action>
@@ -84,7 +84,7 @@
                                 <action behavior="8Direction" id="7" name="Simulate control" sid="260477508671792" type="hero">
                                     <param id="0" name="Control">3</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="231193984540397" type="Sprite5">
+                                <action id="-10" name="Set value" sid="231193984540397" type="heroSkin">
                                     <param id="0" name="Instance variable">direction</param>
                                     <param id="1" name="Value">&quot;bas&quot;</param>
                                 </action>
@@ -108,7 +108,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="767344315883588" type="Sprite5">
+                        <action id="-10" name="Set value" sid="767344315883588" type="heroSkin">
                             <param id="0" name="Instance variable">direction</param>
                             <param id="1" name="Value">&quot;haut&quot;</param>
                         </action>
@@ -124,7 +124,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="334867546434836" type="Sprite5">
+                        <action id="-10" name="Set value" sid="334867546434836" type="heroSkin">
                             <param id="0" name="Instance variable">direction</param>
                             <param id="1" name="Value">&quot;bas&quot;</param>
                         </action>
@@ -140,7 +140,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="176172000407167" type="Sprite5">
+                        <action id="-10" name="Set value" sid="176172000407167" type="heroSkin">
                             <param id="0" name="Instance variable">direction</param>
                             <param id="1" name="Value">&quot;gauche&quot;</param>
                         </action>
@@ -156,7 +156,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="528203009778199" type="Sprite5">
+                        <action id="-10" name="Set value" sid="528203009778199" type="heroSkin">
                             <param id="0" name="Instance variable">direction</param>
                             <param id="1" name="Value">&quot;droite&quot;</param>
                         </action>

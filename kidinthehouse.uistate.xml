@@ -11,8 +11,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">Layout 1</layout>
-        <layout active="1" order="3">assets</layout>
-        <event-sheet order="1">Event sheet 1</event-sheet>
+        <layout order="3">assets</layout>
+        <event-sheet active="1" order="1">Event sheet 1</event-sheet>
         <event-sheet order="2">controles</event-sheet>
         <event-sheet order="4">dialogues_ES</event-sheet>
     </open-tabs>
@@ -36,7 +36,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/item/" />
         <folder expanded="1" path="animation-folder/tourelle/" />
         <folder expanded="1" path="animation-folder/balle/" />
-        <folder expanded="1" path="animation-folder/Sprite5/" />
+        <folder expanded="1" path="animation-folder/heroSkin/" />
         <folder expanded="1" path="animation-folder/pnj/" />
+        <folder expanded="1" path="animation-folder/pieceCam/" />
+        <folder expanded="1" path="animation-folder/triggerPorte/" />
+        <folder expanded="1" path="animation-folder/cam/" />
     </folders-expanded>
 </c2uistate>

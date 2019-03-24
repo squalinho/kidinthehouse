@@ -12,6 +12,7 @@
     <used-plugins>
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Juan Pablo Tarquino" id="Rex_ZSorter" version="1">Z Sorter</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -60,6 +61,9 @@
         </object-type>
         <object-type name="hero" sid="703595984260902">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="idPiece" sid="630494702603159" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="801437365247547">
                     <behavior id="EightDir" />
@@ -153,7 +157,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite5" sid="802576097229949">
+        <object-type name="heroSkin" sid="802576097229949">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="direction" sid="731105105569683" type="string" />
@@ -213,7 +217,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Tilemap" sid="426033708670300">
+        <object-type name="TilemapCollisions" sid="426033708670300">
             <plugin id="Tilemap" />
             <behaviors>
                 <behavior-type name="Solid" sid="983759904129488">
@@ -222,6 +226,43 @@
             </behaviors>
             <texture />
             <tiles />
+        </object-type>
+        <object-type name="pieceCam" sid="549486116883930">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="id" sid="174228981153927" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="631694429000178" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="triggerPorte" sid="255473316155061">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="id" sid="315435955412758" type="number" />
+                <instance-variable name="passage" sid="174549275784203" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="823090152495633" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Function" sid="725733398702600">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="cam" sid="827640779163116">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="vitesse" sid="271662666369054" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="359451027450967" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
@@ -242,6 +283,7 @@
         </global-instance>
         <global-instance type="Keyboard" uid="12" />
         <global-instance type="AJAX" uid="15" />
+        <global-instance type="Function" uid="23" />
     </global-instances>
     <sounds-folder />
     <music-folder />

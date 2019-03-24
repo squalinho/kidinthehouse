@@ -2,7 +2,7 @@
 <c2layout>
     <name>assets</name>
     <sid>594978820423304</sid>
-    <event-sheet></event-sheet>
+    <event-sheet>Event sheet 1</event-sheet>
     <size>
         <width>1708</width>
         <height>960</height>
@@ -29,7 +29,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Sprite5" uid="10">
+                <instance type="heroSkin" uid="10">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>

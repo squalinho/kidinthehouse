@@ -20,7 +20,7 @@
         </event-group>
         <event-block sid="394733487030381">
             <conditions>
-                <condition id="0" name="On collision with another object" sid="935300086890905" type="Sprite5">
+                <condition id="0" name="On collision with another object" sid="935300086890905" type="heroSkin">
                     <param id="0" name="Object">pnj</param>
                 </condition>
             </conditions>
