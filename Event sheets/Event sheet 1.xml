@@ -6,6 +6,20 @@
         <include>dialogues_ES</include>
         <include>controles</include>
         <variable constant="0" name="cam" sid="663636989624691" static="0" type="number">0</variable>
+        <event-group description="" sid="676671231181308" title="debug">
+            <sub-events>
+                <event-block sid="330808560062839">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="803442301252021" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="862479308216201" type="debugTxt">
+                            <param id="0" name="Text">heroSkin.direction &amp; newline &amp; Gamepad.Axis(0,0) &amp; newline &amp; Gamepad.Axis(0,1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="341539819042461" title="init">
             <sub-events>
                 <event-block sid="291866053540580">
@@ -65,20 +79,6 @@
                         <action id="4" name="Set animation" sid="671748347397235" type="heroSkin">
                             <param id="0" name="Animation">Self.direction</param>
                             <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="676671231181308" title="debug">
-            <sub-events>
-                <event-block sid="330808560062839">
-                    <conditions>
-                        <condition id="-1" name="Every tick" sid="803442301252021" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Set text" sid="862479308216201" type="debugTxt">
-                            <param id="0" name="Text">heroSkin.direction &amp; newline &amp; Gamepad.Axis(0,0) &amp; newline &amp; Gamepad.Axis(0,1)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -148,6 +148,68 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="941987344484505">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="897683751277576" type="System">
+                            <param id="0" name="Variable">cam</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Scroll to position" sid="826777026699767" type="System">
+                            <param id="0" name="X">cam.X</param>
+                            <param id="1" name="Y">cam.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="408027039250305">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="359704597798553" type="System">
+                                    <param id="0" name="Object">pieceCam</param>
+                                    <param id="1" name="Expression">pieceCam.id</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">hero.idPiece</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="624985247440131">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="154798089507360" type="System">
+                                            <param id="0" name="Interval (seconds)">0.01</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="609714071289225" type="cam">
+                                            <param id="0" name="X">lerp(Self.X,hero.X,self.vitesse)</param>
+                                            <param id="1" name="Y">lerp(self.Y,hero.Y,self.vitesse)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="734795635280856">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="720047444238381" type="System">
+                                    <param id="0" name="First value">distance(cam.X,cam.Y,hero.X,hero.Y)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="741815146395618" type="cam">
+                                    <param id="0" name="X">hero.X</param>
+                                    <param id="1" name="Y">hero.Y</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="363702595473395" type="System">
+                                    <param id="0" name="Variable">cam</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="167296390374420">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="930017110067933" type="hero">
@@ -163,30 +225,34 @@
                             <param id="0" name="Instance variable">passage</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="749434147086029">
-                    <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="886403483693411" type="triggerPorte">
-                            <param id="0" name="Instance variable">passage</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="829254079878500" type="System">
-                            <param id="0" name="Variable">cam</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="509132278176739">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="451737586583735" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="772113554580205" type="System">
-                            <param id="0" name="Variable">cam</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                    </actions>
+                    <sub-events>
+                        <event-block sid="802663813152223">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="312114430591097" type="triggerPorte">
+                                    <param id="0" name="Instance variable">passage</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="802492408745219" type="System">
+                                    <param id="0" name="Variable">cam</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="749434147086029">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="886403483693411" type="triggerPorte">
+                                    <param id="0" name="Instance variable">passage</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="829254079878500" type="System">
+                                    <param id="0" name="Variable">cam</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

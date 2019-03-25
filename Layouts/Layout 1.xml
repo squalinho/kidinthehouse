@@ -429,12 +429,12 @@
                         <x>360</x>
                         <y>728</y>
                         <z>0</z>
-                        <width>48</width>
-                        <height>24</height>
+                        <width>1</width>
+                        <height>40</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>1</hotspotX>
                         <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
+                        <angle>1.570796371</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
@@ -477,15 +477,15 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>320</x>
+                        <x>328</x>
                         <y>584</y>
                         <z>0</z>
-                        <width>16</width>
-                        <height>80</height>
+                        <width>1</width>
+                        <height>72</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>1</hotspotX>
                         <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
+                        <angle>0.169869423</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
@@ -497,7 +497,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <vitesse>0.05</vitesse>
+                        <vitesse>0.15</vitesse>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
