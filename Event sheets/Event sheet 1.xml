@@ -212,7 +212,7 @@
                 </event-block>
                 <event-block sid="167296390374420">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="930017110067933" type="hero">
+                        <condition id="1" name="Is overlapping another object" sid="930017110067933" type="hero">
                             <param id="0" name="Object">triggerPorte</param>
                         </condition>
                     </conditions>
@@ -221,38 +221,30 @@
                             <param id="0" name="Instance variable">idPiece</param>
                             <param id="1" name="Value">triggerPorte.id</param>
                         </action>
-                        <action id="-14" name="Toggle boolean" sid="733565732650239" type="triggerPorte">
+                        <action id="-13" name="Set boolean" sid="733565732650239" type="triggerPorte">
                             <param id="0" name="Instance variable">passage</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="829254079878500" type="System">
+                            <param id="0" name="Variable">cam</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="802663813152223">
-                            <conditions>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="312114430591097" type="triggerPorte">
-                                    <param id="0" name="Instance variable">passage</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="802492408745219" type="System">
-                                    <param id="0" name="Variable">cam</param>
-                                    <param id="1" name="Value">2</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="749434147086029">
-                            <conditions>
-                                <condition id="-8" name="Is boolean instance variable set" sid="886403483693411" type="triggerPorte">
-                                    <param id="0" name="Instance variable">passage</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="829254079878500" type="System">
-                                    <param id="0" name="Variable">cam</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
+                </event-block>
+                <event-block sid="881379141869981">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="704382432308474" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="891721516468115" type="triggerPorte">
+                            <param id="0" name="Instance variable">passage</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="802492408745219" type="System">
+                            <param id="0" name="Variable">cam</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
