@@ -522,7 +522,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <id>1</id>
+                        <id>0</id>
                         <passage>false</passage>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
