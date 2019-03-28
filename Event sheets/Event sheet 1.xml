@@ -13,8 +13,12 @@
                         <condition id="-1" name="Every tick" sid="803442301252021" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="862479308216201" type="debugTxt">
-                            <param id="0" name="Text">heroSkin.direction &amp; newline &amp; Gamepad.Axis(0,0) &amp; newline &amp; Gamepad.Axis(0,1)</param>
+                        <action disabled="1" id="0" name="Set text" sid="862479308216201" type="debugTxt">
+                            <param id="0" name="Text">Array.At(1)</param>
+                        </action>
+                        <action id="-7" name="Scroll to position" sid="349045596289368" type="System">
+                            <param id="0" name="X">cam.X</param>
+                            <param id="1" name="Y">cam.Y</param>
                         </action>
                     </actions>
                 </event-block>
@@ -95,10 +99,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-7" name="Scroll to position" sid="467067272801810" type="System">
-                            <param id="0" name="X">cam.X</param>
-                            <param id="1" name="Y">cam.Y</param>
-                        </action>
                         <action id="-3" name="Set position" sid="301830987377803" type="cam">
                             <param id="0" name="X">hero.X</param>
                             <param id="1" name="Y">hero.Y</param>
@@ -113,12 +113,7 @@
                             <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-7" name="Scroll to position" sid="349045596289368" type="System">
-                            <param id="0" name="X">cam.X</param>
-                            <param id="1" name="Y">cam.Y</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
                         <event-block sid="695829253567226">
                             <conditions>
@@ -156,12 +151,7 @@
                             <param id="2" name="Value">2</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-7" name="Scroll to position" sid="826777026699767" type="System">
-                            <param id="0" name="X">cam.X</param>
-                            <param id="1" name="Y">cam.Y</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
                         <event-block sid="408027039250305">
                             <conditions>
@@ -192,9 +182,9 @@
                         <event-block sid="734795635280856">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="720047444238381" type="System">
-                                    <param id="0" name="First value">distance(cam.X,cam.Y,hero.X,hero.Y)</param>
+                                    <param id="0" name="First value">round(distance(cam.X,cam.Y,hero.X,hero.Y)*100)/100</param>
                                     <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Second value">1</param>
+                                    <param id="2" name="Second value">0.5</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -221,10 +211,6 @@
                             <param id="0" name="Instance variable">idPiece</param>
                             <param id="1" name="Value">triggerPorte.id</param>
                         </action>
-                        <action id="-13" name="Set boolean" sid="733565732650239" type="triggerPorte">
-                            <param id="0" name="Instance variable">passage</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
                         <action id="-9" name="Set value" sid="829254079878500" type="System">
                             <param id="0" name="Variable">cam</param>
                             <param id="1" name="Value">1</param>
@@ -234,12 +220,9 @@
                 <event-block sid="881379141869981">
                     <conditions>
                         <condition id="-22" name="Else" sid="704382432308474" type="System" />
+                        <condition id="-4" name="Trigger once while true" sid="908864437030433" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-13" name="Set boolean" sid="891721516468115" type="triggerPorte">
-                            <param id="0" name="Instance variable">passage</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
                         <action id="-9" name="Set value" sid="802492408745219" type="System">
                             <param id="0" name="Variable">cam</param>
                             <param id="1" name="Value">2</param>

@@ -12,7 +12,7 @@
                     </conditions>
                     <actions>
                         <action id="11" name="Load" sid="168710375127774" type="Array">
-                            <param id="0" name="JSON">&quot;{&#x0D;&#x0A;&#x0D;&#x0A;&quot;&quot;c2array&quot;&quot;:true,&#x0D;&#x0A;&quot;&quot;size&quot;&quot;:[3,3,1],&#x0D;&#x0A;&quot;&quot;data&quot;&quot;:[&#x0D;&#x0A;&#x0D;&#x0A;&#x09;[[&quot;&quot;idpnj&quot;&quot;],[&quot;&quot;Nom qui parle&quot;&quot;],[&quot;&quot;Dialogue&quot;&quot;]],&#x0D;&#x0A;&#x09;[[&quot;&quot;1&quot;&quot;],[&quot;&quot;Bob&quot;&quot;],[&quot;&quot;Salut comment ca va ?&quot;&quot;]],&#x0D;&#x0A;&#x09;[[&quot;&quot;2&quot;&quot;],[&quot;&quot;Max&quot;&quot;],[&quot;&quot;Bien et toi ?&quot;&quot;]]&#x0D;&#x0A;&#x09;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;]&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;}&quot;</param>
+                            <param id="0" name="JSON">&quot;{&#x0D;&#x0A;&#x0D;&#x0A;&quot;&quot;c2array&quot;&quot;:true,&#x0D;&#x0A;&quot;&quot;size&quot;&quot;:[4,4,1],&#x0D;&#x0A;&quot;&quot;data&quot;&quot;:[&#x0D;&#x0A;&#x0D;&#x0A;&#x09;[[&quot;&quot;idpnj&quot;&quot;],[&quot;&quot;conversation&quot;&quot;],[&quot;&quot;Nom qui parle&quot;&quot;],[&quot;&quot;Dialogue&quot;&quot;]],&#x0D;&#x0A;&#x09;[[&quot;&quot;1&quot;&quot;],[&quot;&quot;0&quot;&quot;],[&quot;&quot;Bob&quot;&quot;],[&quot;&quot;Salut comment ca va ?&quot;&quot;]],&#x0D;&#x0A;&#x09;[[&quot;&quot;1&quot;&quot;],[&quot;&quot;1&quot;&quot;],[&quot;&quot;Bob&quot;&quot;],[&quot;&quot;Alors Hack&apos;n Plan c&apos;est bien ?&quot;&quot;]],&#x0D;&#x0A;&#x09;[[&quot;&quot;2&quot;&quot;],[&quot;&quot;0&quot;&quot;],[&quot;&quot;Max&quot;&quot;],[&quot;&quot;Bien et toi ?&quot;&quot;]]&#x0D;&#x0A;&#x09;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;]&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;}&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -29,15 +29,9 @@
                     <param id="0" name="Variable">dial</param>
                     <param id="1" name="Value">pnj.id</param>
                 </action>
-            </actions>
-        </event-block>
-        <event-block sid="389071023842701">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="918964782172263" type="System" />
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="632090619534945" type="dialogueTxt">
-                    <param id="0" name="Text">Array.At(dial,1) &amp; newline &amp; Array.At(dial,2)</param>
+                <action id="-13" name="Set boolean" sid="861354875851097" type="pnj">
+                    <param id="0" name="Instance variable">actif</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>
@@ -57,6 +51,21 @@
                     <param id="0" name="State">1</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="400172806572153">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="733416477265145" type="System">
+                            <param id="0" name="Object">pnj</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="160386717326642" type="pnj">
+                            <param id="0" name="Instance variable">actif</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="168600819506164">
             <conditions>
@@ -69,12 +78,31 @@
                 <action behavior="8Direction" id="8" name="Set enabled" sid="861503950968395" type="hero">
                     <param id="0" name="State">0</param>
                 </action>
+                <action id="0" name="Set text" sid="632090619534945" type="dialogueTxt">
+                    <param id="0" name="Text">Array.At(dial,2) &amp; newline &amp; Array.At(dial,3)</param>
+                </action>
             </actions>
+            <sub-events>
+                <event-block sid="944691569051917">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="954219603011452" type="System">
+                            <param id="0" name="Variable">dial</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Array.IndexOf(dial)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="981235002987086" type="debugTxt">
+                            <param id="0" name="Text">Array.CurValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="749400050412439">
             <conditions>
                 <condition id="0" name="On key pressed" sid="198347375662617" type="Keyboard">
-                    <param id="0" name="Key">68</param>
+                    <param id="0" name="Key">32</param>
                 </condition>
             </conditions>
             <actions>
@@ -83,6 +111,24 @@
                     <param id="1" name="Value">0</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="265947557488794">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="104483842787617" type="System">
+                            <param id="0" name="Object">pnj</param>
+                            <param id="1" name="Expression">pnj.actif</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="969303104606833" type="pnj">
+                            <param id="0" name="Instance variable">conversation</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

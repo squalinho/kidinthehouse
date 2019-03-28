@@ -8,7 +8,7 @@
     <author-website>http://</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>2zsbbr8znul9k</unique-id>
-    <saved-with-version>26500</saved-with-version>
+    <saved-with-version>26700</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
@@ -174,7 +174,17 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="bas" pingpong="0" repeatcount="1" repeatto="0" sid="590045288195208" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.895833" original-source="C:\Users\Squale\Desktop\kids\img\hero.png">
+                        <collision-poly>
+                            <point x="0.125" y="0.0952381" />
+                            <point x="0.458333" y="0.119048" />
+                            <point x="0.791667" y="0.0952381" />
+                            <point x="0.708333" y="0.47619" />
+                            <point x="0.666667" y="0.785714" />
+                            <point x="0.25" y="0.785714" />
+                            <point x="0.208333" y="0.47619" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="haut" pingpong="0" repeatcount="1" repeatto="0" sid="566793646166462" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="1" />
@@ -203,6 +213,8 @@
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="id" sid="173154848305421" type="number" />
+                <instance-variable name="conversation" sid="300303374982881" type="number" />
+                <instance-variable name="actif" sid="649744372314679" type="boolean" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="125254286593544" speed="5">
@@ -242,7 +254,6 @@
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="id" sid="315435955412758" type="number" />
-                <instance-variable name="passage" sid="174549275784203" type="boolean" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="823090152495633" speed="5">
