@@ -23,6 +23,7 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
@@ -275,16 +276,141 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="testmoveheros" sid="686669456974070">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="direction" sid="297798996360132" type="string" />
+                <instance-variable name="dirX" sid="122763713747554" type="number" />
+                <instance-variable name="dirY" sid="402896672044655" type="number" />
+                <instance-variable name="Maxspeedtest" sid="910429168116059" type="number" />
+                <instance-variable name="Accelerationtest" sid="404610400387510" type="number" />
+                <instance-variable name="Decelerationtest" sid="743428566213613" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="964493165481256">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="971201250767155">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="495040413130352">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="bas" pingpong="0" repeatcount="1" repeatto="0" sid="534331516752014" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.895833" original-source="C:\Users\Squale\Desktop\kids\img\hero.png">
+                        <image-point name="hit" x="0.75" y="0.5625" />
+                        <image-point name="hit2" x="0.25" y="0.5625" />
+                        <image-point name="hit3" x="0.5" y="0.166667" />
+                        <image-point name="hit4" x="0.5" y="0.833333" />
+                        <collision-poly>
+                            <point x="0.125" y="0.0952381" />
+                            <point x="0.458333" y="0.119048" />
+                            <point x="0.791667" y="0.0952381" />
+                            <point x="0.708333" y="0.47619" />
+                            <point x="0.666667" y="0.785714" />
+                            <point x="0.25" y="0.785714" />
+                            <point x="0.208333" y="0.47619" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="haut" pingpong="0" repeatcount="1" repeatto="0" sid="948406177959462" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                </animation>
+                <animation framecount="1" loop="0" name="droite" pingpong="0" repeatcount="1" repeatto="0" sid="680701075113883" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="test_wall" sid="148024480778180">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="754969082841028">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="782211704166848" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="testweapon1" sid="352535768817941">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="547883412671900">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Pin" sid="245012743325736">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="714886050821191" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.46875">
+                        <collision-poly>
+                            <point x="0.0683594" y="0.363281" />
+                            <point x="0.923828" y="0.371094" />
+                            <point x="0.929688" y="0.625" />
+                            <point x="0.0625" y="0.623047" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="testEnemi" sid="852555555979706">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="move" sid="786115517833456" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="271362611635889">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="264483887149831" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.1875" y="0.195313" />
+                            <point x="0.796875" y="0.109375" />
+                            <point x="0.914063" y="0.9375" />
+                            <point x="0.078125" y="0.882813" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="testtxt1" sid="150358231444589">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="testtxt2" sid="220637294395301">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="testtxt3" sid="221255343338889">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="testgeneenemi" sid="639273416190039">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="628805111818749" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
         <layout>assets.xml</layout>
+        <layout>kayutest.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
         <event-sheet>controles.xml</event-sheet>
         <event-sheet>dialogues_ES.xml</event-sheet>
+        <event-sheet>kayutest.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Gamepad" uid="7">

@@ -10,11 +10,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">Layout 1</layout>
+        <layout order="0">Layout 1</layout>
         <layout order="3">assets</layout>
+        <layout active="1" order="5">kayutest</layout>
         <event-sheet order="1">Event sheet 1</event-sheet>
         <event-sheet order="2">controles</event-sheet>
         <event-sheet order="4">dialogues_ES</event-sheet>
+        <event-sheet order="6">kayutest</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -41,5 +43,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/pieceCam/" />
         <folder expanded="1" path="animation-folder/triggerPorte/" />
         <folder expanded="1" path="animation-folder/cam/" />
+        <folder expanded="1" path="animation-folder/testmoveheros/" />
+        <folder expanded="1" path="animation-folder/test_wall/" />
+        <folder expanded="1" path="animation-folder/testweapon1/" />
+        <folder expanded="1" path="animation-folder/testEnemi/" />
+        <folder expanded="1" path="animation-folder/testgeneenemi/" />
     </folders-expanded>
 </c2uistate>
