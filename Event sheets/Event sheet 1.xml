@@ -13,8 +13,8 @@
                         <condition id="-1" name="Every tick" sid="803442301252021" type="System" />
                     </conditions>
                     <actions>
-                        <action disabled="1" id="0" name="Set text" sid="862479308216201" type="debugTxt">
-                            <param id="0" name="Text">Array.At(1)</param>
+                        <action id="0" name="Set text" sid="862479308216201" type="debugTxt">
+                            <param id="0" name="Text">distance(hero.X,hero.Y,murRight.X,murRight.Y) &amp; newline &amp; WindowWidth/2</param>
                         </action>
                         <action id="-7" name="Scroll to position" sid="349045596289368" type="System">
                             <param id="0" name="X">cam.X</param>
@@ -49,10 +49,14 @@
                             <param id="0" name="X">hero.X</param>
                             <param id="1" name="Y">hero.Y</param>
                         </action>
+                        <action id="-13" name="Set boolean" sid="357975012347347" type="cam">
+                            <param id="0" name="Instance variable">actif</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <comment>debug</comment>
-                        <event-block sid="849427267055227">
+                        <event-block disabled="1" sid="849427267055227">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="473576333541980" type="System">
                                     <param id="0" name="First value">LayoutName</param>
@@ -90,126 +94,136 @@
         </event-group>
         <event-group description="" sid="788628104120450" title="gestion camera">
             <sub-events>
-                <event-block sid="664745736003880">
+                <event-block sid="647983363377915">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="450904127802512" type="System">
-                            <param id="0" name="Variable">cam</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Set position" sid="301830987377803" type="cam">
-                            <param id="0" name="X">hero.X</param>
-                            <param id="1" name="Y">hero.Y</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="541664005931210">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="337042608370858" type="System">
-                            <param id="0" name="Variable">cam</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="-8" name="Is boolean instance variable set" sid="678944441191691" type="cam">
+                            <param id="0" name="Instance variable">actif</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="695829253567226">
+                        <event-block sid="664745736003880">
                             <conditions>
-                                <condition id="-33" name="Pick by comparison" sid="931057885769488" type="System">
-                                    <param id="0" name="Object">pieceCam</param>
-                                    <param id="1" name="Expression">pieceCam.id</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">hero.idPiece</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="548658735744188">
-                                    <conditions>
-                                        <condition id="-6" name="Every X seconds" sid="423291959192979" type="System">
-                                            <param id="0" name="Interval (seconds)">0.01</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Set position" sid="900148771372205" type="cam">
-                                            <param id="0" name="X">lerp(Self.X,pieceCam.X,self.vitesse)</param>
-                                            <param id="1" name="Y">lerp(Self.Y,pieceCam.Y,self.vitesse)</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="941987344484505">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="897683751277576" type="System">
-                            <param id="0" name="Variable">cam</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">2</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="408027039250305">
-                            <conditions>
-                                <condition id="-33" name="Pick by comparison" sid="359704597798553" type="System">
-                                    <param id="0" name="Object">pieceCam</param>
-                                    <param id="1" name="Expression">pieceCam.id</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">hero.idPiece</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="624985247440131">
-                                    <conditions>
-                                        <condition id="-6" name="Every X seconds" sid="154798089507360" type="System">
-                                            <param id="0" name="Interval (seconds)">0.01</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Set position" sid="609714071289225" type="cam">
-                                            <param id="0" name="X">lerp(Self.X,hero.X,self.vitesse)</param>
-                                            <param id="1" name="Y">lerp(self.Y,hero.Y,self.vitesse)</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="734795635280856">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="720047444238381" type="System">
-                                    <param id="0" name="First value">round(distance(cam.X,cam.Y,hero.X,hero.Y)*100)/100</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Second value">0.5</param>
+                                <condition id="-14" name="Compare variable" sid="450904127802512" type="System">
+                                    <param id="0" name="Variable">cam</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-3" name="Set position" sid="741815146395618" type="cam">
+                                <action id="-3" name="Set position" sid="301830987377803" type="cam">
                                     <param id="0" name="X">hero.X</param>
                                     <param id="1" name="Y">hero.Y</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="363702595473395" type="System">
-                                    <param id="0" name="Variable">cam</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
                             </actions>
+                        </event-block>
+                        <event-block sid="541664005931210">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="337042608370858" type="System">
+                                    <param id="0" name="Variable">cam</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="695829253567226">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="931057885769488" type="System">
+                                            <param id="0" name="Object">pieceCam</param>
+                                            <param id="1" name="Expression">pieceCam.id</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">hero.idPiece</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="548658735744188">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="423291959192979" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.01</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Set position" sid="900148771372205" type="cam">
+                                                    <param id="0" name="X">lerp(Self.X,pieceCam.X,self.vitesse)</param>
+                                                    <param id="1" name="Y">lerp(Self.Y,pieceCam.Y,self.vitesse)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="941987344484505">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="897683751277576" type="System">
+                                    <param id="0" name="Variable">cam</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="408027039250305">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="359704597798553" type="System">
+                                            <param id="0" name="Object">pieceCam</param>
+                                            <param id="1" name="Expression">pieceCam.id</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">hero.idPiece</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="624985247440131">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="154798089507360" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.01</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Set position" sid="609714071289225" type="cam">
+                                                    <param id="0" name="X">lerp(Self.X,hero.X,self.vitesse)</param>
+                                                    <param id="1" name="Y">lerp(self.Y,hero.Y,self.vitesse)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="734795635280856">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="720047444238381" type="System">
+                                            <param id="0" name="First value">round(distance(cam.X,cam.Y,hero.X,hero.Y)*100)/100</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">0.5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="741815146395618" type="cam">
+                                            <param id="0" name="X">hero.X</param>
+                                            <param id="1" name="Y">hero.Y</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="363702595473395" type="System">
+                                            <param id="0" name="Variable">cam</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="167296390374420">
                     <conditions>
                         <condition id="1" name="Is overlapping another object" sid="930017110067933" type="hero">
-                            <param id="0" name="Object">triggerPorte</param>
+                            <param id="0" name="Object">triggerSalle</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-10" name="Set value" sid="665593196627585" type="hero">
                             <param id="0" name="Instance variable">idPiece</param>
-                            <param id="1" name="Value">triggerPorte.id</param>
+                            <param id="1" name="Value">triggerSalle.id</param>
                         </action>
                         <action id="-9" name="Set value" sid="829254079878500" type="System">
                             <param id="0" name="Variable">cam</param>
@@ -311,5 +325,63 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block any="1" sid="424843376970110">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="844297876459009" type="System">
+                    <param id="0" name="First value">murRight.X-hero.X</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">240</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="309116646820939" type="cam">
+                    <param id="0" name="Instance variable">actif</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="252702725522700">
+            <conditions>
+                <condition id="-22" name="Else" sid="149647447425398" type="System" />
+                <condition id="-8" name="Compare two values" sid="840797964242193" type="System">
+                    <param id="0" name="First value">hero.X-murLeft.X</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">240</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="945990340572066" type="cam">
+                    <param id="0" name="Instance variable">actif</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="870605929551498">
+            <conditions>
+                <condition id="-22" name="Else" sid="631128201546998" type="System" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="880678005436209" type="cam">
+                    <param id="0" name="Instance variable">actif</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="157524594520491">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="790484124954155" type="hero">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="X co-ordinate">murRight.X+(murRight.Width/2)</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="204162953629444" type="cam">
+                    <param id="0" name="Instance variable">actif</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="584929666726985" type="System">
+                    <param id="0" name="Layout">exterieur</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

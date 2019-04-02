@@ -12,11 +12,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <open-tabs>
         <layout active="1" order="0">Layout 1</layout>
         <layout order="3">assets</layout>
-        <layout order="5">kayutest</layout>
+        <layout order="5">exterieur</layout>
         <event-sheet order="1">Event sheet 1</event-sheet>
         <event-sheet order="2">controles</event-sheet>
         <event-sheet order="4">dialogues_ES</event-sheet>
-        <event-sheet order="6">kayutest</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -27,26 +26,26 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <families-expanded root="1" />
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
+        <folder expanded="0" path="object-folder/personnages/" />
+        <folder expanded="0" path="object-folder/camera/" />
+        <folder expanded="0" path="object-folder/controles/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
-        <folder expanded="1" path="file-folder/" />
+        <folder expanded="0" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/hero/" />
+        <folder expanded="1" path="animation-folder/heroSkin/" />
+        <folder expanded="1" path="animation-folder/pnj/" />
+        <folder expanded="1" path="animation-folder/cam/" />
+        <folder expanded="1" path="animation-folder/murLeft/" />
+        <folder expanded="1" path="animation-folder/murRight/" />
+        <folder expanded="1" path="animation-folder/pieceCam/" />
+        <folder expanded="1" path="animation-folder/triggerSalle/" />
         <folder expanded="1" path="animation-folder/mur/" />
         <folder expanded="1" path="animation-folder/item/" />
         <folder expanded="1" path="animation-folder/tourelle/" />
         <folder expanded="1" path="animation-folder/balle/" />
-        <folder expanded="1" path="animation-folder/heroSkin/" />
-        <folder expanded="1" path="animation-folder/pnj/" />
-        <folder expanded="1" path="animation-folder/pieceCam/" />
-        <folder expanded="1" path="animation-folder/triggerPorte/" />
-        <folder expanded="1" path="animation-folder/cam/" />
-        <folder expanded="1" path="animation-folder/testmoveheros/" />
-        <folder expanded="1" path="animation-folder/test_wall/" />
-        <folder expanded="1" path="animation-folder/testweapon1/" />
-        <folder expanded="1" path="animation-folder/testEnemi/" />
-        <folder expanded="1" path="animation-folder/testgeneenemi/" />
     </folders-expanded>
 </c2uistate>
